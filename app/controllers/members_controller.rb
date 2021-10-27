@@ -2,6 +2,7 @@ class MembersController < ApplicationController
     before_action :authenticate_user!
   
     def show
-      render json: { message: "If you see this, you're in!" }
+      @users = User.all
+      render json: @users
     end
 end
